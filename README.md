@@ -42,7 +42,7 @@ https://github.com/jacklipton/Gravitational-Fireworks-/assets/83594679/13a207a6-
 
 ## About The Project
 
-This project was made for a computer human interaction course at Queen's University. The user is able to create spheres, each with there own individual gravitational pull, by moving their cursor about the window. Particles are free to move and affect each others trajectory, with an attached vector indicating their direction of acceleration.
+This project was made for a human-computer interaction course at Queen's University. The user is able to create spheres, each with there own individual gravitational pull, by moving their cursor about the window. Particles are free to move and affect each others trajectory, with an attached vector indicating their direction of acceleration.
 
 
 ### Built With
