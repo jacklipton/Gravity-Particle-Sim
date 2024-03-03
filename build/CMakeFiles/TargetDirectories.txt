@@ -1,0 +1,3 @@
+/home/jacklipton/Coding_Projects/Gravitational-Fireworks-/build/CMakeFiles/MySDLApp.dir
+/home/jacklipton/Coding_Projects/Gravitational-Fireworks-/build/CMakeFiles/edit_cache.dir
+/home/jacklipton/Coding_Projects/Gravitational-Fireworks-/build/CMakeFiles/rebuild_cache.dir
