@@ -56,6 +56,7 @@ int main(int argc, char* args []) {
                 int x, y;
                 SDL_GetMouseState(&x, &y);
                 particles.emplace_back(make_pair(x,y));
+                particles.emplace_back(make_pair(x,y));
             }
             update(renderer);
             startTime = currentTime; // Reset the start time for the next frame
@@ -97,7 +98,7 @@ void applyAttraction(Particle *prtcle) {
             // Constrain the variable between 1 and 1000
             distSq = (distSq < 1) ? 1 : ((distSq > 1000) ? 1000 : distSq);
 
-            double strength = 0.05 * (1.0 / distSq);
+            double strength = 0.01 * (1.0 / distSq);
             force.first *= strength;
             force.second *= strength;
 
