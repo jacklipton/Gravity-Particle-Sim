@@ -1,0 +1,3 @@
+/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles/MySDLApp.dir
+/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles/edit_cache.dir
+/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles/rebuild_cache.dir
