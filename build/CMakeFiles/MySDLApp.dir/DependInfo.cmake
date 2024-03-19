@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/jacklipton/Coding_Projects/Fireworks_with_cuda/kernels.cu" "CMakeFiles/MySDLApp.dir/kernels.cu.o" "gcc" "CMakeFiles/MySDLApp.dir/kernels.cu.o.d"
   "/home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle.cpp" "CMakeFiles/MySDLApp.dir/Particle.cpp.o" "gcc" "CMakeFiles/MySDLApp.dir/Particle.cpp.o.d"
   "/home/jacklipton/Coding_Projects/Fireworks_with_cuda/main.cpp" "CMakeFiles/MySDLApp.dir/main.cpp.o" "gcc" "CMakeFiles/MySDLApp.dir/main.cpp.o.d"
   )

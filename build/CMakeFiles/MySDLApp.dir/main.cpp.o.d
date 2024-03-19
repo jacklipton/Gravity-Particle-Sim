@@ -287,15 +287,7 @@ CMakeFiles/MySDLApp.dir/main.cpp.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc \
- /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle.hpp \
- /usr/include/c++/11/random /usr/include/c++/11/bits/random.h \
- /usr/include/c++/11/bits/uniform_int_dist.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
- /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
- /usr/include/c++/11/bits/stl_numeric.h /usr/include/c++/11/bit \
- /usr/include/c++/11/pstl/glue_numeric_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h /usr/include/cuda_runtime.h \
+ /usr/include/c++/11/bits/istream.tcc /usr/include/cuda_runtime.h \
  /usr/include/crt/host_config.h /usr/include/builtin_types.h \
  /usr/include/device_types.h /usr/include/crt/host_defines.h \
  /usr/include/driver_types.h /usr/include/vector_types.h \
@@ -311,4 +303,15 @@ CMakeFiles/MySDLApp.dir/main.cpp.o: \
  /usr/include/library_types.h /usr/include/channel_descriptor.h \
  /usr/include/cuda_runtime_api.h /usr/include/cuda_device_runtime_api.h \
  /usr/include/driver_functions.h /usr/include/vector_functions.h \
- /usr/include/vector_functions.hpp
+ /usr/include/vector_functions.hpp /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
+ /usr/include/c++/11/bits/parse_numbers.h \
+ /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle.hpp \
+ /usr/include/c++/11/random /usr/include/c++/11/bits/random.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
+ /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h \
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle_CUDA.cuh
