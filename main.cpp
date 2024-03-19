@@ -3,12 +3,20 @@
 #include <vector>
 #include <utility>
 #include <iostream>
-#include "Particle.hpp"
+
 #include <cuda_runtime.h>
+#include <chrono>
+
+#include "Particle.hpp"
+#include "Particle_CUDA.cuh"
 
 using namespace std;
 
+
+
 vector<Particle> particles;
+
+
 
 void update(SDL_Renderer *rndr);
 void applyAttraction(Particle *prtcle);
@@ -71,38 +79,57 @@ int main(int argc, char* args []) {
 
 void update(SDL_Renderer *rndr){
     SDL_SetRenderDrawColor(rndr, 0, 0, 0, 255); // Set the background color to purple
-    SDL_RenderClear(rndr);
-    for(int i = particles.size()-1; i>= 0; i--){
-        Particle& p = particles.at(i);
-        p.setAcc(make_pair(0,0));
-        applyAttraction(&p);
-        p.setVel(make_pair(p.getVel().first + p.getAcc().first, p.getVel().second + p.getAcc().second));
-        p.setPos(make_pair(p.getPos().first + p.getVel().first, p.getPos().second + p.getVel().second)); //deal w/ pairs
-        p.setLifespan(p.getLifespan() - 0.5);
-        filledCircleRGBA(rndr,p.getPos().first, p.getPos().second, 8, 255,255,255, p.getLifespan());
+    
+    unsigned long int numBytes = particles.size() * sizeof(Particle);
+    
+    Particle* d_particles;
+    cudaError_t err = cudaMalloc((void**)&d_particles, numBytes);
 
-        if(p.getLifespan() <=0){
-            particles.erase(particles.begin()+i);
-        }
+    cudaMemcpy(d_particles,particles.data(), numBytes, cudaMemcpyHostToDevice);
+    
+    if (err != cudaSuccess) {
+    cout << "Failed to allocate device memory: " << cudaGetErrorString(err) << endl;
+    return;
+    }else{
+        cout << "Allocated device memory" << endl;
     }
+    
+    // SDL_RenderClear(rndr);
+    // for(int i = particles.size()-1; i>= 0; i--){
+    //     Particle& p = particles.at(i);
+    //     p.setAcc(make_pair(0,0));
+    //     applyAttraction(&p);
+    //     p.setVel(make_pair(p.getVel().first + p.getAcc().first, p.getVel().second + p.getAcc().second));
+    //     p.setPos(make_pair(p.getPos().first + p.getVel().first, p.getPos().second + p.getVel().second)); //deal w/ pairs
+    //     p.setLifespan(p.getLifespan() - 0.5);
+    //     filledCircleRGBA(rndr,p.getPos().first, p.getPos().second, 8, 255,255,255, p.getLifespan());
+
+    //     if(p.getLifespan() <=0){
+    //         particles.erase(particles.begin()+i);
+    //     }
+    // }
+
+
+    cudaFree(d_particles);
+    cout << "Freed device memory" << endl;
 
     SDL_RenderPresent(rndr); // Render changes onto the screen
 }
 
-void applyAttraction(Particle *prtcle) {
-    for (Particle& other : particles) {
-        if (&other != prtcle) {
-            pair<float, float> force = make_pair(other.getPos().first - prtcle->getPos().first, other.getPos().second - prtcle->getPos().second);
-            double distSq = (force.first*force.first) + (force.second*force.second);
-            // Constrain the variable between 1 and 1000
-            distSq = (distSq < 1) ? 1 : ((distSq > 1000) ? 1000 : distSq);
+// void applyAttraction(Particle *prtcle) {
+//     for (Particle& other : particles) {
+//         if (&other != prtcle) {
+//             pair<float, float> force = make_pair(other.getPos().first - prtcle->getPos().first, other.getPos().second - prtcle->getPos().second);
+//             double distSq = (force.first*force.first) + (force.second*force.second);
+//             // Constrain the variable between 1 and 1000
+//             distSq = (distSq < 1) ? 1 : ((distSq > 1000) ? 1000 : distSq);
 
-            double strength = 0.05 * (1.0 / distSq);
-            force.first *= strength;
-            force.second *= strength;
+//             double strength = 0.05 * (1.0 / distSq);
+//             force.first *= strength;
+//             force.second *= strength;
 
 
-            prtcle->setAcc(make_pair(prtcle->getAcc().first + force.first, prtcle->getAcc().second + force.second));
-        }
-    }
-}
+//             prtcle->setAcc(make_pair(prtcle->getAcc().first + force.first, prtcle->getAcc().second + force.second));
+//         }
+//     }
+// }
