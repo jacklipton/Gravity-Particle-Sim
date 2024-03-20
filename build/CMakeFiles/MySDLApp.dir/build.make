@@ -69,38 +69,24 @@ include CMakeFiles/MySDLApp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/MySDLApp.dir/flags.make
 
-CMakeFiles/MySDLApp.dir/main.cpp.o: CMakeFiles/MySDLApp.dir/flags.make
-CMakeFiles/MySDLApp.dir/main.cpp.o: ../main.cpp
-CMakeFiles/MySDLApp.dir/main.cpp.o: CMakeFiles/MySDLApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MySDLApp.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MySDLApp.dir/main.cpp.o -MF CMakeFiles/MySDLApp.dir/main.cpp.o.d -o CMakeFiles/MySDLApp.dir/main.cpp.o -c /home/jacklipton/Coding_Projects/Fireworks_with_cuda/main.cpp
-
-CMakeFiles/MySDLApp.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MySDLApp.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jacklipton/Coding_Projects/Fireworks_with_cuda/main.cpp > CMakeFiles/MySDLApp.dir/main.cpp.i
-
-CMakeFiles/MySDLApp.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MySDLApp.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jacklipton/Coding_Projects/Fireworks_with_cuda/main.cpp -o CMakeFiles/MySDLApp.dir/main.cpp.s
-
 CMakeFiles/MySDLApp.dir/Particle.cpp.o: CMakeFiles/MySDLApp.dir/flags.make
 CMakeFiles/MySDLApp.dir/Particle.cpp.o: ../Particle.cpp
 CMakeFiles/MySDLApp.dir/Particle.cpp.o: CMakeFiles/MySDLApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MySDLApp.dir/Particle.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MySDLApp.dir/Particle.cpp.o -MF CMakeFiles/MySDLApp.dir/Particle.cpp.o.d -o CMakeFiles/MySDLApp.dir/Particle.cpp.o -c /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MySDLApp.dir/Particle.cpp.o"
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MySDLApp.dir/Particle.cpp.o -MF CMakeFiles/MySDLApp.dir/Particle.cpp.o.d -o CMakeFiles/MySDLApp.dir/Particle.cpp.o -c /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle.cpp
 
 CMakeFiles/MySDLApp.dir/Particle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MySDLApp.dir/Particle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle.cpp > CMakeFiles/MySDLApp.dir/Particle.cpp.i
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle.cpp > CMakeFiles/MySDLApp.dir/Particle.cpp.i
 
 CMakeFiles/MySDLApp.dir/Particle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MySDLApp.dir/Particle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle.cpp -o CMakeFiles/MySDLApp.dir/Particle.cpp.s
+	/usr/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle.cpp -o CMakeFiles/MySDLApp.dir/Particle.cpp.s
 
 CMakeFiles/MySDLApp.dir/kernels.cu.o: CMakeFiles/MySDLApp.dir/flags.make
 CMakeFiles/MySDLApp.dir/kernels.cu.o: ../kernels.cu
 CMakeFiles/MySDLApp.dir/kernels.cu.o: CMakeFiles/MySDLApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CUDA object CMakeFiles/MySDLApp.dir/kernels.cu.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CUDA object CMakeFiles/MySDLApp.dir/kernels.cu.o"
 	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/MySDLApp.dir/kernels.cu.o -MF CMakeFiles/MySDLApp.dir/kernels.cu.o.d -x cu -c /home/jacklipton/Coding_Projects/Fireworks_with_cuda/kernels.cu -o CMakeFiles/MySDLApp.dir/kernels.cu.o
 
 CMakeFiles/MySDLApp.dir/kernels.cu.i: cmake_force
@@ -111,18 +97,32 @@ CMakeFiles/MySDLApp.dir/kernels.cu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/MySDLApp.dir/kernels.cu.s"
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
+CMakeFiles/MySDLApp.dir/main.cpp.o: CMakeFiles/MySDLApp.dir/flags.make
+CMakeFiles/MySDLApp.dir/main.cpp.o: ../main.cpp
+CMakeFiles/MySDLApp.dir/main.cpp.o: CMakeFiles/MySDLApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CUDA object CMakeFiles/MySDLApp.dir/main.cpp.o"
+	/usr/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/MySDLApp.dir/main.cpp.o -MF CMakeFiles/MySDLApp.dir/main.cpp.o.d -x cu -c /home/jacklipton/Coding_Projects/Fireworks_with_cuda/main.cpp -o CMakeFiles/MySDLApp.dir/main.cpp.o
+
+CMakeFiles/MySDLApp.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/MySDLApp.dir/main.cpp.i"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_PREPROCESSED_SOURCE
+
+CMakeFiles/MySDLApp.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CUDA source to assembly CMakeFiles/MySDLApp.dir/main.cpp.s"
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
+
 # Object files for target MySDLApp
 MySDLApp_OBJECTS = \
-"CMakeFiles/MySDLApp.dir/main.cpp.o" \
 "CMakeFiles/MySDLApp.dir/Particle.cpp.o" \
-"CMakeFiles/MySDLApp.dir/kernels.cu.o"
+"CMakeFiles/MySDLApp.dir/kernels.cu.o" \
+"CMakeFiles/MySDLApp.dir/main.cpp.o"
 
 # External object files for target MySDLApp
 MySDLApp_EXTERNAL_OBJECTS =
 
-MySDLApp: CMakeFiles/MySDLApp.dir/main.cpp.o
 MySDLApp: CMakeFiles/MySDLApp.dir/Particle.cpp.o
 MySDLApp: CMakeFiles/MySDLApp.dir/kernels.cu.o
+MySDLApp: CMakeFiles/MySDLApp.dir/main.cpp.o
 MySDLApp: CMakeFiles/MySDLApp.dir/build.make
 MySDLApp: /usr/lib/x86_64-linux-gnu/libcudart_static.a
 MySDLApp: /usr/lib/x86_64-linux-gnu/librt.a

@@ -16,26 +16,36 @@ link_directories(${CMAKE_SOURCE_DIR}/path/to/SDL2_gfx/lib)
 # Add CUDA include directories
 include_directories(${CUDA_INCLUDE_DIRS})
 
+# Set the C compiler
+set(CMAKE_C_COMPILER /usr/bin/gcc-9)
+
+# Set the C++ compiler
+set(CMAKE_CXX_COMPILER /usr/bin/g++-9)
+
 # CUDA flags
-set(CMAKE_CUDA_FLAGS ${CUDA_CUDA_FLAGS} -std=c++11)
+set(CMAKE_CUDA_FLAGS ${CUDA_CUDA_FLAGS} -std=c++14)
 
 # Add CUDA sources
 set(CUDA_SOURCES
     kernels.cu
+    main.cpp
 )
 
 set (SOURCES
-    main.cpp
     Particle.cpp
     Particle.hpp
     Particle_CUDA.cuh
 )
 
+
+#
+
 # CUDA compile
 add_executable(MySDLApp ${SOURCES} ${CUDA_SOURCES})
 
-# Set CUDA_ARCHITECTURES property
+#Set CUDA_ARCHITECTURES property
 set_property(TARGET MySDLApp PROPERTY CUDA_ARCHITECTURES OFF)
+set_source_files_properties(main.cpp PROPERTIES LANGUAGE CUDA)
 
 # Include SDL2 headers
 target_include_directories(MySDLApp PRIVATE ${SDL2_INCLUDE_DIRS})

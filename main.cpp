@@ -82,7 +82,7 @@ void update(SDL_Renderer *rndr){
     
     unsigned long int numBytes = particles.size() * sizeof(Particle);
     
-    Particle* d_particles;
+    Particle_CUDA* d_particles;
     cudaError_t err1 = cudaMalloc((void**)&d_particles, numBytes);
 
     cudaMemcpy(d_particles,particles.data(), numBytes, cudaMemcpyHostToDevice);
@@ -90,9 +90,16 @@ void update(SDL_Renderer *rndr){
     if (err1 != cudaSuccess) {
     cout << "Failed to allocate device memory: " << cudaGetErrorString(err1) << endl;
     return;
-    }else{
-        cout << "Allocated device memory" << endl;
     }
+    // else{
+    //     cout << "Allocated device memory" << endl;
+    // }
+
+    // Launch the CUDA kernel
+    int threadsPerBlock = 256;
+    int blocks = (particles.size() + threadsPerBlock - 1) / threadsPerBlock;
+    updateParticles<<<blocks, threadsPerBlock>>>(d_particles, particles.size());
+
     
     SDL_RenderClear(rndr);
     // for(int i = particles.size()-1; i>= 0; i--){
@@ -112,7 +119,17 @@ void update(SDL_Renderer *rndr){
     // After the kernel has finished...
     cudaMemcpy(particles.data(), d_particles, particles.size() * sizeof(Particle), cudaMemcpyDeviceToHost);
     cudaFree(d_particles);
-    cout << "Freed device memory" << endl;
+    //cout << "Freed device memory" << endl;
+
+    for(int i = particles.size()-1; i>= 0; i--){
+        Particle& p = particles.at(i);
+        if(p.getLifespan() <=0){
+            particles.erase(particles.begin()+i);
+        }else{
+            filledCircleRGBA(rndr,p.getPos().first, p.getPos().second, 8, 255,255,255, p.getLifespan());
+        }
+
+    }
 
     SDL_RenderPresent(rndr); // Render changes onto the screen
 }
