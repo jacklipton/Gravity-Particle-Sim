@@ -19,7 +19,7 @@ void addArraysCPU(float* a, float* b, float* c, int size) {
 
 
 int main() {
-    int size = 100000000; // Size of the arrays
+    int size = 100000; // Size of the arrays
     int numBytes = size * sizeof(float);
 
     // Allocate memory on the host

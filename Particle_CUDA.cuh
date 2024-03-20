@@ -4,12 +4,12 @@
 
 //float2 is a struct that contains two floats built in for cuda
 struct Particle_CUDA {
-    float2 position;
-    float2 velocity;
-    float2 acceleration;
+    float2 pos;
+    float2 vel;
+    float2 acc;
     float lifespan;
 };
 
-__global__ void addArrays(float* a, float* b, float* c, int size);
+__global__ void updateParticles(Particle_CUDA* particles, int numParticles);
 
 #endif // PARTICLE_CUH

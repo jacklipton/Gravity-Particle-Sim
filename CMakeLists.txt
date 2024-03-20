@@ -28,7 +28,7 @@ set (SOURCES
     main.cpp
     Particle.cpp
     Particle.hpp
-    Particle.cuh
+    Particle_CUDA.cuh
 )
 
 # CUDA compile
