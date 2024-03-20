@@ -373,7 +373,8 @@ CMakeFiles/MySDLApp.dir/kernels.cu.o: ../kernels.cu \
   /usr/include/texture_fetch_functions.h \
   /usr/include/texture_indirect_functions.h \
   /usr/include/surface_indirect_functions.h \
-  /usr/include/device_launch_parameters.h
+  /usr/include/device_launch_parameters.h \
+  ../Particle_CUDA.cuh
 
 CMakeFiles/MySDLApp.dir/main.cpp.o: ../main.cpp \
   /usr/include/stdc-predef.h \
@@ -1237,9 +1238,9 @@ CMakeFiles/MySDLApp.dir/main.cpp.o: ../main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
-../Particle_CUDA.cuh:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vpopcntdqvlintrin.h:
+
+../Particle_CUDA.cuh:
 
 /usr/include/c++/11/exception:
 

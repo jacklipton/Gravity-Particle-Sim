@@ -146,4 +146,5 @@ CMakeFiles/MySDLApp.dir/kernels.cu.o : /home/jacklipton/Coding_Projects/Firework
     /usr/include/texture_fetch_functions.h \
     /usr/include/texture_indirect_functions.h \
     /usr/include/surface_indirect_functions.h \
-    /usr/include/device_launch_parameters.h
+    /usr/include/device_launch_parameters.h \
+    /home/jacklipton/Coding_Projects/Fireworks_with_cuda/Particle_CUDA.cuh
