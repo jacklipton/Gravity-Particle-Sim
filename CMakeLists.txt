@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.18)
 project(MySDLApp LANGUAGES CXX CUDA)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find SDL2
 find_package(SDL2 REQUIRED)
@@ -26,26 +28,28 @@ set(CMAKE_CXX_COMPILER /usr/bin/g++-9)
 set(CMAKE_CUDA_FLAGS ${CUDA_CUDA_FLAGS} -std=c++14)
 
 # Add CUDA sources
-set(CUDA_SOURCES
+set (CUDA_SOURCES
     kernels.cu
-    main.cpp
-)
-
-set (SOURCES
-    Particle.cpp
-    Particle.hpp
     Particle_CUDA.cuh
 )
 
+# Add C++ sources
+set (SOURCES
+    main.cpp
+    Particle.cpp
+    Particle.hpp
+)
 
-#
+# Add CUDA kernel file to the project
+cuda_add_library(ParticlesKernels ${CUDA_SOURCES})
 
 # CUDA compile
-add_executable(MySDLApp ${SOURCES} ${CUDA_SOURCES})
+add_executable(MySDLApp ${SOURCES})
+target_link_libraries(MySDLApp PRIVATE ParticlesKernels)
 
-#Set CUDA_ARCHITECTURES property
-set_property(TARGET MySDLApp PROPERTY CUDA_ARCHITECTURES OFF)
-set_source_files_properties(main.cpp PROPERTIES LANGUAGE CUDA)
+# Set CUDA_ARCHITECTURES property
+set_property(TARGET ParticlesKernels PROPERTY CUDA_ARCHITECTURES OFF)
+set_source_files_properties(kernels.cu PROPERTIES LANGUAGE CUDA)
 
 # Include SDL2 headers
 target_include_directories(MySDLApp PRIVATE ${SDL2_INCLUDE_DIRS})
@@ -55,5 +59,3 @@ target_link_libraries(MySDLApp PRIVATE ${SDL2_LIBRARIES} SDL2_gfx)
 
 # Link CUDA libraries
 target_link_libraries(MySDLApp PRIVATE ${CUDA_LIBRARIES})
-
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -S")

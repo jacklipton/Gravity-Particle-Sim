@@ -4,7 +4,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "cmake --build ${workspaceFolder}/build --config Debug",
+            "command": "cmake --build ${workspaceFolder}/build",
             "args": [],
             "group": "build"
         },

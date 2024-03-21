@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ParticlesKernels
+
+# Build rule for target.
+ParticlesKernels: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ParticlesKernels
+.PHONY : ParticlesKernels
+
+# fast build rule for target.
+ParticlesKernels/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticlesKernels.dir/build.make CMakeFiles/ParticlesKernels.dir/build
+.PHONY : ParticlesKernels/fast
+
+#=============================================================================
 # Target rules for targets named MySDLApp
 
 # Build rule for target.
@@ -153,30 +166,6 @@ Particle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/Particle.cpp.s
 .PHONY : Particle.cpp.s
 
-kernels.o: kernels.cu.o
-.PHONY : kernels.o
-
-# target to build an object file
-kernels.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/kernels.cu.o
-.PHONY : kernels.cu.o
-
-kernels.i: kernels.cu.i
-.PHONY : kernels.i
-
-# target to preprocess a source file
-kernels.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/kernels.cu.i
-.PHONY : kernels.cu.i
-
-kernels.s: kernels.cu.s
-.PHONY : kernels.s
-
-# target to generate assembly for a file
-kernels.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/kernels.cu.s
-.PHONY : kernels.cu.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -210,12 +199,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MySDLApp"
+	@echo "... ParticlesKernels"
 	@echo "... Particle.o"
 	@echo "... Particle.i"
 	@echo "... Particle.s"
-	@echo "... kernels.o"
-	@echo "... kernels.i"
-	@echo "... kernels.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -94,11 +94,9 @@ void update(SDL_Renderer *rndr){
     // else{
     //     cout << "Allocated device memory" << endl;
     // }
-
-    // Launch the CUDA kernel
-    int threadsPerBlock = 256;
-    int blocks = (particles.size() + threadsPerBlock - 1) / threadsPerBlock;
-    updateParticles<<<blocks, threadsPerBlock>>>(d_particles, particles.size());
+    int blockSize = 256;
+    int numBlocks = (particles.size() + blockSize - 1) / blockSize;
+    updateParticles<<<numBlocks, blockSize>>>(d_particles, particles.size());
 
     
     SDL_RenderClear(rndr);
@@ -118,6 +116,8 @@ void update(SDL_Renderer *rndr){
 
     // After the kernel has finished...
     cudaMemcpy(particles.data(), d_particles, particles.size() * sizeof(Particle), cudaMemcpyDeviceToHost);
+
+    //cout << particles.at(0).getPos().first << endl;
     cudaFree(d_particles);
     //cout << "Freed device memory" << endl;
 

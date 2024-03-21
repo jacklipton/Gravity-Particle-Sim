@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/ParticlesKernels.dir/all
 all: CMakeFiles/MySDLApp.dir/all
 .PHONY : all
 
@@ -71,22 +72,49 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/ParticlesKernels.dir/clean
 clean: CMakeFiles/MySDLApp.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ParticlesKernels.dir
+
+# All Build rule for target.
+CMakeFiles/ParticlesKernels.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticlesKernels.dir/build.make CMakeFiles/ParticlesKernels.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticlesKernels.dir/build.make CMakeFiles/ParticlesKernels.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=4,5 "Built target ParticlesKernels"
+.PHONY : CMakeFiles/ParticlesKernels.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ParticlesKernels.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ParticlesKernels.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 0
+.PHONY : CMakeFiles/ParticlesKernels.dir/rule
+
+# Convenience name for target.
+ParticlesKernels: CMakeFiles/ParticlesKernels.dir/rule
+.PHONY : ParticlesKernels
+
+# clean rule for target.
+CMakeFiles/ParticlesKernels.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticlesKernels.dir/build.make CMakeFiles/ParticlesKernels.dir/clean
+.PHONY : CMakeFiles/ParticlesKernels.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/MySDLApp.dir
 
 # All Build rule for target.
-CMakeFiles/MySDLApp.dir/all:
+CMakeFiles/MySDLApp.dir/all: CMakeFiles/ParticlesKernels.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=1,2,3,4 "Built target MySDLApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=1,2,3 "Built target MySDLApp"
 .PHONY : CMakeFiles/MySDLApp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MySDLApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MySDLApp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 0
 .PHONY : CMakeFiles/MySDLApp.dir/rule

@@ -11,6 +11,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeCUDACompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
+  "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o.cmake.pre-gen"
+  "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o.depend"
   "/usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config-version.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCUDAInformation.cmake"
@@ -29,6 +31,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.22/Modules/Compiler/GNU.cmake"
   "/usr/share/cmake-3.22/Modules/Compiler/NVIDIA-CUDA.cmake"
   "/usr/share/cmake-3.22/Modules/FindCUDA.cmake"
+  "/usr/share/cmake-3.22/Modules/FindCUDA/run_nvcc.cmake"
   "/usr/share/cmake-3.22/Modules/FindCUDA/select_compute_arch.cmake"
   "/usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.22/Modules/FindPackageMessage.cmake"
@@ -48,10 +51,13 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o.cmake.pre-gen"
+  "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o.Debug.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/ParticlesKernels.dir/DependInfo.cmake"
   "CMakeFiles/MySDLApp.dir/DependInfo.cmake"
   )

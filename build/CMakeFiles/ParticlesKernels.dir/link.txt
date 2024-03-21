@@ -1,0 +1,2 @@
+/usr/bin/ar qc libParticlesKernels.a CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o
+/usr/bin/ranlib libParticlesKernels.a
