@@ -66,7 +66,10 @@ int main(int argc, char* args []) {
                 SDL_GetMouseState(&x, &y);
                 particles.emplace_back(make_pair(x,y));
             }
+
+            if (particles.size() > 0){  
             update(renderer);
+            }
             startTime = currentTime; // Reset the start time for the next frame
         }
     }
