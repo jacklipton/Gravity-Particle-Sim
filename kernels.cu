@@ -20,10 +20,12 @@ __global__ void updateParticles(Particle_CUDA* particles, int numParticles) {
                 totalForce.y += force.y;
             }
         }
+        float damping = 0.5f;
+
         p.acc.x += totalForce.x;
         p.acc.y += totalForce.y;
-        p.vel.x += p.acc.x;
-        p.vel.y += p.acc.y;
+        p.vel.x = (p.vel.x + p.acc.x) * damping;
+        p.vel.y = (p.vel.y + p.acc.y) * damping;
         p.pos.x += p.vel.x;
         p.pos.y += p.vel.y;
         p.lifespan -= 0.5f;

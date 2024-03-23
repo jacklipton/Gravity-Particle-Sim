@@ -7,7 +7,7 @@ struct Particle_CUDA {
     float2 pos;
     float2 vel;
     float2 acc;
-    float lifespan;
+    double lifespan;
 };
 
 __global__ void updateParticles(Particle_CUDA* particles, int numParticles);

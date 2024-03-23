@@ -94,9 +94,8 @@ void update(SDL_Renderer *rndr){
         cout << "Failed to allocate device memory or copy to device" << endl;
     return;
     }
-    // else{
-    //     cout << "Allocated device memory" << endl;
-    // }
+
+    
     int blockSize = 256;
     int numBlocks = (particles.size() + blockSize - 1) / blockSize;
     updateParticles<<<numBlocks, blockSize>>>(d_particles, particles.size());
