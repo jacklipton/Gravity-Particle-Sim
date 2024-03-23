@@ -117,37 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ParticlesKernels
+# Target rules for targets named Fireworks_with_cuda
 
 # Build rule for target.
-ParticlesKernels: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ParticlesKernels
-.PHONY : ParticlesKernels
+Fireworks_with_cuda: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Fireworks_with_cuda
+.PHONY : Fireworks_with_cuda
 
 # fast build rule for target.
-ParticlesKernels/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticlesKernels.dir/build.make CMakeFiles/ParticlesKernels.dir/build
-.PHONY : ParticlesKernels/fast
-
-#=============================================================================
-# Target rules for targets named MySDLApp
-
-# Build rule for target.
-MySDLApp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MySDLApp
-.PHONY : MySDLApp
-
-# fast build rule for target.
-MySDLApp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/build
-.PHONY : MySDLApp/fast
+Fireworks_with_cuda/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks_with_cuda.dir/build.make CMakeFiles/Fireworks_with_cuda.dir/build
+.PHONY : Fireworks_with_cuda/fast
 
 Particle.o: Particle.cpp.o
 .PHONY : Particle.o
 
 # target to build an object file
 Particle.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/Particle.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks_with_cuda.dir/build.make CMakeFiles/Fireworks_with_cuda.dir/Particle.cpp.o
 .PHONY : Particle.cpp.o
 
 Particle.i: Particle.cpp.i
@@ -155,7 +142,7 @@ Particle.i: Particle.cpp.i
 
 # target to preprocess a source file
 Particle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/Particle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks_with_cuda.dir/build.make CMakeFiles/Fireworks_with_cuda.dir/Particle.cpp.i
 .PHONY : Particle.cpp.i
 
 Particle.s: Particle.cpp.s
@@ -163,7 +150,7 @@ Particle.s: Particle.cpp.s
 
 # target to generate assembly for a file
 Particle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/Particle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks_with_cuda.dir/build.make CMakeFiles/Fireworks_with_cuda.dir/Particle.cpp.s
 .PHONY : Particle.cpp.s
 
 # Help Target
@@ -174,8 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... MySDLApp"
-	@echo "... ParticlesKernels"
+	@echo "... Fireworks_with_cuda"
 	@echo "... Particle.o"
 	@echo "... Particle.i"
 	@echo "... Particle.s"

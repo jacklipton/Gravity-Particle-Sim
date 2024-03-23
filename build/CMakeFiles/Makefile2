@@ -63,8 +63,7 @@ CMAKE_BINARY_DIR = /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/ParticlesKernels.dir/all
-all: CMakeFiles/MySDLApp.dir/all
+all: CMakeFiles/Fireworks_with_cuda.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,61 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/ParticlesKernels.dir/clean
-clean: CMakeFiles/MySDLApp.dir/clean
+clean: CMakeFiles/Fireworks_with_cuda.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ParticlesKernels.dir
+# Target rules for target CMakeFiles/Fireworks_with_cuda.dir
 
 # All Build rule for target.
-CMakeFiles/ParticlesKernels.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticlesKernels.dir/build.make CMakeFiles/ParticlesKernels.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticlesKernels.dir/build.make CMakeFiles/ParticlesKernels.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=3,4,5 "Built target ParticlesKernels"
-.PHONY : CMakeFiles/ParticlesKernels.dir/all
+CMakeFiles/Fireworks_with_cuda.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks_with_cuda.dir/build.make CMakeFiles/Fireworks_with_cuda.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks_with_cuda.dir/build.make CMakeFiles/Fireworks_with_cuda.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=1,2,3,4 "Built target Fireworks_with_cuda"
+.PHONY : CMakeFiles/Fireworks_with_cuda.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ParticlesKernels.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ParticlesKernels.dir/all
+CMakeFiles/Fireworks_with_cuda.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Fireworks_with_cuda.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 0
-.PHONY : CMakeFiles/ParticlesKernels.dir/rule
+.PHONY : CMakeFiles/Fireworks_with_cuda.dir/rule
 
 # Convenience name for target.
-ParticlesKernels: CMakeFiles/ParticlesKernels.dir/rule
-.PHONY : ParticlesKernels
+Fireworks_with_cuda: CMakeFiles/Fireworks_with_cuda.dir/rule
+.PHONY : Fireworks_with_cuda
 
 # clean rule for target.
-CMakeFiles/ParticlesKernels.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParticlesKernels.dir/build.make CMakeFiles/ParticlesKernels.dir/clean
-.PHONY : CMakeFiles/ParticlesKernels.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/MySDLApp.dir
-
-# All Build rule for target.
-CMakeFiles/MySDLApp.dir/all: CMakeFiles/ParticlesKernels.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles --progress-num=1,2 "Built target MySDLApp"
-.PHONY : CMakeFiles/MySDLApp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/MySDLApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MySDLApp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacklipton/Coding_Projects/Fireworks_with_cuda/build/CMakeFiles 0
-.PHONY : CMakeFiles/MySDLApp.dir/rule
-
-# Convenience name for target.
-MySDLApp: CMakeFiles/MySDLApp.dir/rule
-.PHONY : MySDLApp
-
-# clean rule for target.
-CMakeFiles/MySDLApp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySDLApp.dir/build.make CMakeFiles/MySDLApp.dir/clean
-.PHONY : CMakeFiles/MySDLApp.dir/clean
+CMakeFiles/Fireworks_with_cuda.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Fireworks_with_cuda.dir/build.make CMakeFiles/Fireworks_with_cuda.dir/clean
+.PHONY : CMakeFiles/Fireworks_with_cuda.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
