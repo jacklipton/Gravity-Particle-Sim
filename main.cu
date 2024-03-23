@@ -85,10 +85,10 @@ void update(SDL_Renderer *rndr){
     Particle_CUDA* d_particles;
     cudaError_t err1 = cudaMalloc((void**)&d_particles, numBytes);
 
-    cudaMemcpy(d_particles,particles.data(), numBytes, cudaMemcpyHostToDevice);
+    cudaError_t err2  = cudaMemcpy(d_particles,particles.data(), numBytes, cudaMemcpyHostToDevice);
     
-    if (err1 != cudaSuccess) {
-    cout << "Failed to allocate device memory: " << cudaGetErrorString(err1) << endl;
+    if (err1 != cudaSuccess || err2 != cudaSuccess) {
+        cout << "Failed to allocate device memory or copy to device" << endl;
     return;
     }
     // else{
@@ -116,6 +116,13 @@ void update(SDL_Renderer *rndr){
 
     // After the kernel has finished...
     cudaMemcpy(particles.data(), d_particles, particles.size() * sizeof(Particle), cudaMemcpyDeviceToHost);
+    cudaError_t err3 = cudaGetLastError();
+    if (err3 != cudaSuccess) {
+        cout << "Failed to copy device memory to host or to launch/update particles: " << cudaGetErrorString(err3) << endl;
+        return;
+    }
+    
+
 
     //cout << particles.at(0).getPos().first << endl;
     cudaFree(d_particles);

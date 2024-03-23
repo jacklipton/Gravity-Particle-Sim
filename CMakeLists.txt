@@ -5,7 +5,7 @@ project(Fireworks_with_cuda)
 find_package(CUDA REQUIRED)
 
 # Set CUDA architecture (change according to your GPU)
-set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-arch=sm_62)
+set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-arch=sm_61)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 # Add CUDA source files
