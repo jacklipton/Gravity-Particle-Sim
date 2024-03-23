@@ -13,6 +13,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
   "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o.cmake.pre-gen"
   "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o.depend"
+  "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_main.cu.o.cmake.pre-gen"
+  "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_main.cu.o.depend"
   "/usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config-version.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCUDAInformation.cmake"
@@ -52,7 +54,9 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o.cmake.pre-gen"
+  "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_main.cu.o.cmake.pre-gen"
   "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o.Debug.cmake"
+  "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_main.cu.o.Debug.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

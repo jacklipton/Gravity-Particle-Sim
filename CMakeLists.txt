@@ -31,11 +31,12 @@ set(CMAKE_CUDA_FLAGS ${CUDA_CUDA_FLAGS} -std=c++14)
 set (CUDA_SOURCES
     kernels.cu
     Particle_CUDA.cuh
+    main.cu
 )
 
 # Add C++ sources
 set (SOURCES
-    main.cpp
+
     Particle.cpp
     Particle.hpp
 )

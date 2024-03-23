@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_kernels.cu.o"
+  "CMakeFiles/ParticlesKernels.dir/ParticlesKernels_generated_main.cu.o"
   "libParticlesKernels.a"
   "libParticlesKernels.pdb"
 )
