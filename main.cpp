@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include <vector>
+#include <chrono>
 #include <utility>
 #include <iostream>
 #include "Particle.hpp"
@@ -58,7 +59,22 @@ int main(int argc, char* args []) {
                 particles.emplace_back(make_pair(x,y));
                 particles.emplace_back(make_pair(x,y));
             }
-            update(renderer);
+
+
+    // Get the start time
+// Get the start time
+// auto start = std::chrono::high_resolution_clock::now();
+
+update(renderer);
+
+// // Get the end time
+// auto end = std::chrono::high_resolution_clock::now();
+
+// // Calculate and print the duration in milliseconds
+// auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+// std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
+
+
             startTime = currentTime; // Reset the start time for the next frame
         }
     }
