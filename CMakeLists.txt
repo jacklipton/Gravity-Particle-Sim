@@ -7,6 +7,12 @@ find_package(CUDA REQUIRED)
 # Set CUDA architecture (change according to your GPU)
 set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-arch=sm_61)
 
+set(CMAKE_CXX_COMPILER "/usr/bin/g++-9")
+set(CMAKE_CC_COMPILER "/usr/bin/gcc-9")
+
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} --compiler-bindir/usr/bin/g++-9")
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} --compiler-bindir/usr/bin/gcc-9")
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 # Add CUDA source files
 set(CUDA_SOURCE_FILES

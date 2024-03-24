@@ -7,7 +7,7 @@
 
 Particle::Particle(pair<int, int> pairInput) {
     this->position = pairInput;
-    this->velocity = make_pair(genFlt(-0.5,0.5),genFlt(-0.5,0.5));
+    this->velocity = make_pair(genFlt(-8,8),genFlt(-4,4));
     this->acceleration = make_pair(0,0);
     this->lifespan = 255.0;
 }

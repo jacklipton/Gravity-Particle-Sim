@@ -9,6 +9,9 @@ __global__ void updateParticles(Particle_CUDA* particles, int numParticles) {
         float2 totalForce = make_float2(0, 0);
         for (int i = 0; i < numParticles; i++) {
             if (i != tid) {
+
+                p.acc = make_float2(0, 0);
+
                 Particle_CUDA& other = particles[i];
                 float2 force = make_float2(other.pos.x - p.pos.x, other.pos.y - p.pos.y);
                 float distSq = force.x * force.x + force.y * force.y;
@@ -20,7 +23,7 @@ __global__ void updateParticles(Particle_CUDA* particles, int numParticles) {
                 totalForce.y += force.y;
             }
         }
-        float damping = 0.5f;
+        float damping = 0.99f;
 
         p.acc.x += totalForce.x;
         p.acc.y += totalForce.y;
@@ -28,6 +31,6 @@ __global__ void updateParticles(Particle_CUDA* particles, int numParticles) {
         p.vel.y = (p.vel.y + p.acc.y) * damping;
         p.pos.x += p.vel.x;
         p.pos.y += p.vel.y;
-        p.lifespan -= 0.5f;
+        p.lifespan -= 1.0f;
     }
 }

@@ -65,10 +65,28 @@ int main(int argc, char* args []) {
                 int x, y;
                 SDL_GetMouseState(&x, &y);
                 particles.emplace_back(make_pair(x,y));
+                particles.emplace_back(make_pair(x,y));
             }
 
+
+
+
             if (particles.size() > 0){  
-            update(renderer);
+
+                // cudaEvent_t start, stop;
+                // cudaEventCreate(&start);
+                // cudaEventCreate(&stop);
+    
+                // cudaEventRecord(start);
+                update(renderer);
+                // cudaEventRecord(stop);
+                // cudaDeviceSynchronize();
+
+                // float milliseconds = 0;
+                // cudaEventElapsedTime(&milliseconds, start, stop);
+
+                // cout << "Elapsed time (GPU): " << milliseconds << " ms" << endl;
+
             }
             startTime = currentTime; // Reset the start time for the next frame
         }
@@ -81,6 +99,8 @@ int main(int argc, char* args []) {
 }
 
 void update(SDL_Renderer *rndr){
+
+
     SDL_SetRenderDrawColor(rndr, 0, 0, 0, 255); // Set the background color to purple
     
     unsigned long int numBytes = particles.size() * sizeof(Particle);
@@ -115,6 +135,8 @@ void update(SDL_Renderer *rndr){
     //         particles.erase(particles.begin()+i);
     //     }
     // }
+
+            // Wait for the kernel to finish
 
     // After the kernel has finished...
     cudaMemcpy(particles.data(), d_particles, particles.size() * sizeof(Particle), cudaMemcpyDeviceToHost);
