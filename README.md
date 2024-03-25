@@ -5,7 +5,7 @@
 <h3 align="center">Gravitational Fireworks</h3>
 
   <p align="center">
-    An HCI themed art project running in Processing displaying the gravitational attraction of particles
+    An HCI themed art project running using CUDA displaying the gravitational attraction of particles
     <br />
     <a href="https://github.com/jacklipton/Gravitational-Fireworks-jk
       "><strong>Explore the docs »</strong></a>
@@ -15,7 +15,11 @@
 
 
 
-https://github.com/jacklipton/Gravitational-Fireworks-/assets/83594679/13a207a6-5e15-42f1-9077-564a46958a07
+
+
+https://github.com/jacklipton/Gravity-Particle-Sim/assets/83594679/2499265a-112a-4cfa-b2d4-bad43b53462b
+
+
 
 
 
@@ -47,18 +51,65 @@ This project was made for a human-computer interaction course at Queen's Univers
 
 ### Built With
 
-* [Processing](https://processing.org/)
+* [C++](https://gcc.gnu.org/)
+* [CUDA](https://developer.nvidia.com/cuda-toolkit)
+* [CMake](https://cmake.org/)
 
 
 ## Prerequisites
+YOU MUST HAVE a NVIDIA GPU
 
 Before you begin, ensure you have met the following requirements:
 
-* Downloaded the Processing IDE and have the Java libraries installed
+* Install the CUDA Toolkit from the [nvidia website](https://developer.nvidia.com/cuda-downloads?target_os=Linux)
+
+
+* Havegnu 9 installed. Ensure GCC/G++ 9.x is set as the default of your shell
+
+```bash
+sudo apt update
+sudo apt install gcc-9 g++-9
+#add as an alternative version capable to be used
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+#run the command and then set the version to 9
+sudo update-alternatives --config gcc
+```
+
+* Install CMake
+
+```bash
+sudo apt install cmake
+```
+
+* Install SDL2 & SDL2_gfx
+
+```bash
+sudo apt install libsdl2-dev
+sudo apt install libsdl2-gfx-dev
+```
 
 ## Configuration
 
-Load the .pde file in and run!
+ * Clone this repository
+
+```bash
+git clone -b CUDA https://github.com/jacklipton/Gravity-Particle-Sim.git
+cd Gravity-Particle-Sim
+```
+ * Modify the CMakeLists.txt line: set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-arch=sm_61) with your GPU architecture
+* Create a build folder and move into it
+
+```bash
+mkdir build
+cd build
+```
+* Build and run the program
+
+```bash
+cmake ..
+make
+./Fireworks_with_cuda
+```
 
 ## Contributing
 
