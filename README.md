@@ -57,7 +57,7 @@ This project was made for a human-computer interaction course at Queen's Univers
 
 
 ## Prerequisites
-YOU MUST HAVE a NVIDIA GPU
+YOU MUST HAVE A NVIDIA GPU
 
 Before you begin, ensure you have met the following requirements:
 
